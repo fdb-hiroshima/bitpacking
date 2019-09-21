@@ -169,6 +169,12 @@ pub trait BitPacker: Sized + Clone + Copy {
     /// its result too aggressively.
     fn new() -> Self;
 
+    #[doc(hidden)]
+    /// Create a bitpacker always using the scalar implementation
+    ///
+    /// Useful only to compare scalar vs vectored speed
+    fn new_scalar() -> Self;
+
     /// Compress a block of `u32`.
     ///
     /// Assumes that the integers are all lower than `2^num_bits`.

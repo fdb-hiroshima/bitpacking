@@ -70,6 +70,10 @@ impl BitPacker for BitPacker1x {
         BitPacker1x
     }
 
+    fn new_scalar() -> BitPacker1x {
+        BitPacker1x::new()
+    }
+
     fn compress(&self, decompressed: &[u32], compressed: &mut [u8], num_bits: u8) -> usize {
         unsafe { scalar::UnsafeBitPackerImpl::compress(decompressed, compressed, num_bits) }
     }

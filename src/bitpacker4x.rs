@@ -181,6 +181,10 @@ impl BitPacker for BitPacker4x {
         BitPacker4x(InstructionSet::Scalar)
     }
 
+    fn new_scalar() -> Self {
+        BitPacker4x(InstructionSet::Scalar)
+    }
+
     fn compress(&self, decompressed: &[u32], compressed: &mut [u8], num_bits: u8) -> usize {
         unsafe {
             match self.0 {

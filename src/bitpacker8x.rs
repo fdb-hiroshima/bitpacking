@@ -215,6 +215,10 @@ impl BitPacker for BitPacker8x {
         BitPacker8x(InstructionSet::Scalar)
     }
 
+    fn new_scalar() -> Self {
+        BitPacker8x(InstructionSet::Scalar)
+    }
+
     fn compress(&self, decompressed: &[u32], compressed: &mut [u8], num_bits: u8) -> usize {
         unsafe {
             match self.0 {
